@@ -5,7 +5,7 @@ struct MacContentView: View {
     @State private var quote = FlipOffQuotes.all[4]
     @State private var agentState: FlipOffAgentState?
 
-    private let timer = Timer.publish(every: 4, on: .main, in: .common).autoconnect()
+    private let timer = Timer.publish(every: 8, on: .main, in: .common).autoconnect()
 
     private var displayQuote: FlipOffQuote {
         agentState?.overrideQuote ?? quote
@@ -99,15 +99,12 @@ private struct FlipOffMacBoard: View {
 
                 Spacer(minLength: 8)
 
-                VStack(spacing: gap) {
-                    ForEach(rows.indices, id: \.self) { rowIndex in
-                        HStack(spacing: gap) {
-                            ForEach(Array(rows[rowIndex].enumerated()), id: \.offset) { item in
-                                MacTile(character: item.element, size: tileSize)
-                            }
-                        }
-                    }
-                }
+                SplitFlapBoard(
+                    rows: rows,
+                    columns: columns,
+                    cellSize: tileSize,
+                    gap: gap
+                )
                 .frame(width: gridWidth, height: gridHeight)
 
                 Spacer(minLength: 8)
@@ -122,25 +119,6 @@ private struct FlipOffMacBoard: View {
             .clipShape(RoundedRectangle(cornerRadius: 18, style: .continuous))
             .shadow(color: .black.opacity(0.28), radius: 14, y: 8)
         }
-    }
-}
-
-private struct MacTile: View {
-    let character: Character
-    let size: CGFloat
-
-    var body: some View {
-        Text(character == " " ? "" : String(character))
-            .font(.system(size: max(12, min(34, size * 0.52)), weight: .bold, design: .monospaced))
-            .foregroundStyle(.white)
-            .frame(width: size, height: size)
-            .background(Color(red: 0.135, green: 0.14, blue: 0.145))
-            .clipShape(RoundedRectangle(cornerRadius: 4, style: .continuous))
-            .overlay(alignment: .center) {
-                Rectangle()
-                    .fill(Color.black.opacity(0.32))
-                    .frame(height: 1)
-            }
     }
 }
 

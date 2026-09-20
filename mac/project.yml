@@ -20,6 +20,7 @@ targets:
       - path: FlipOffShared
       - path: FlipOffMac/FlipOffMacApp.swift
       - path: FlipOffMac/MacContentView.swift
+      - path: FlipOffMac/SplitFlapBoard.swift
     dependencies:
       - target: FlipOffWidgetExtension
         embed: true
