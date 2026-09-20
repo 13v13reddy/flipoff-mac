@@ -2,7 +2,7 @@ import SwiftUI
 
 enum SplitFlapCharacters {
     // The order is the physical path around a real flap drum.
-    static let ordered: [Character] = Array(" ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-./:")
+    static let ordered: [Character] = Array(" ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-./")
 
     private static let indexByCharacter = Dictionary(
         uniqueKeysWithValues: ordered.enumerated().map { ($0.element, $0.offset) }
