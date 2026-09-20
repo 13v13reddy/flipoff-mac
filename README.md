@@ -93,9 +93,15 @@ The repository also includes a native macOS companion in `mac/`:
 Install the XcodeGen project and build the native targets:
 
 ```bash
-cd mac
-xcodegen generate
-open FlipOffMac.xcodeproj
+./build.sh
+```
+
+The script regenerates `mac/FlipOffMac.xcodeproj`, builds both native targets sequentially, and writes ignored artifacts under `.build/`. Set `CONFIGURATION=Release`, `CODE_SIGNING_ALLOWED=YES`, or `BUILD_ROOT=/path/to/output` to override the defaults.
+
+To open the generated project directly:
+
+```bash
+open mac/FlipOffMac.xcodeproj
 ```
 
 Build `FlipOffMac` to preview the widget, then build `FlipOffScreenSaver` and double-click the generated `FlipOff.saver` to install it in macOS Screen Saver settings.
