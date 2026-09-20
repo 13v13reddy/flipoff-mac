@@ -96,7 +96,7 @@ Install the XcodeGen project and build the native targets:
 ./build.sh
 ```
 
-The script regenerates `mac/FlipOffMac.xcodeproj`, builds both native targets sequentially, and writes ignored artifacts under `.build/`. Set `CONFIGURATION=Release`, `CODE_SIGNING_ALLOWED=YES`, or `BUILD_ROOT=/path/to/output` to override the defaults.
+The script regenerates `mac/FlipOffMac.xcodeproj`, builds both native targets sequentially, and writes ignored artifacts under `build/`. Set `CONFIGURATION=Release`, `CODE_SIGNING_ALLOWED=YES`, or `BUILD_ROOT=/path/to/output` to override the defaults.
 
 To open the generated project directly:
 
