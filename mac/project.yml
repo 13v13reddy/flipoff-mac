@@ -18,7 +18,8 @@ targets:
     platform: macOS
     sources:
       - path: FlipOffShared
-      - path: FlipOffMac
+      - path: FlipOffMac/FlipOffMacApp.swift
+      - path: FlipOffMac/MacContentView.swift
     dependencies:
       - target: FlipOffWidgetExtension
         embed: true

@@ -30,6 +30,7 @@ struct MacContentView: View {
                             width: min(max(proxy.size.width - 64, 640), 1_360),
                             height: min(max(proxy.size.height * 0.62, 340), 540)
                         )
+                        .offset(y: -proxy.size.height * 0.125)
 
                     Spacer(minLength: 24)
                 }

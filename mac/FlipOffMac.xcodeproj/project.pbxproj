@@ -53,11 +53,9 @@
 		6D5A9034B00FD47C21A90EC1 /* FlipOffAgentState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlipOffAgentState.swift; sourceTree = "<group>"; };
 		A93BAF5F0CD6D5D23CDA700A /* FlipOffScreenSaver.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlipOffScreenSaver.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		B105F645924107ED94330CAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		B12130E058CF12BEE98E57F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		CA48B0B606254DC742A8634C /* FlipOffWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = FlipOffWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC2C6935D136130E757A0EF6 /* FlipOffQuote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlipOffQuote.swift; sourceTree = "<group>"; };
 		CE43AAB12E314BFE77FDCBD0 /* FlipOffWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FlipOffWidget.entitlements; sourceTree = "<group>"; };
-		F04FE212B0DFE9BEE41EF0FD /* FlipOffMac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FlipOffMac.entitlements; sourceTree = "<group>"; };
 		F9857E569BFD56C50EBBDF38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -95,9 +93,7 @@
 		D5C6184D9A1DF48536168359 /* FlipOffMac */ = {
 			isa = PBXGroup;
 			children = (
-				F04FE212B0DFE9BEE41EF0FD /* FlipOffMac.entitlements */,
 				4455201862771A6BD721E3A8 /* FlipOffMacApp.swift */,
-				B12130E058CF12BEE98E57F6 /* Info.plist */,
 				3032A23D1194D8E6FBC8962B /* MacContentView.swift */,
 			);
 			path = FlipOffMac;
