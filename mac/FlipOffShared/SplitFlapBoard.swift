@@ -27,6 +27,24 @@ struct SplitFlapBoard: View {
     let columns: Int
     let cellSize: CGFloat
     let gap: CGFloat
+    let seamGap: CGFloat
+    let cascadeDelay: TimeInterval
+
+    init(
+        rows: [String],
+        columns: Int,
+        cellSize: CGFloat,
+        gap: CGFloat,
+        seamGap: CGFloat? = nil,
+        cascadeDelay: TimeInterval = 0.028
+    ) {
+        self.rows = rows
+        self.columns = columns
+        self.cellSize = cellSize
+        self.gap = gap
+        self.seamGap = seamGap ?? max(2, min(5, cellSize * 0.085))
+        self.cascadeDelay = cascadeDelay
+    }
 
     var body: some View {
         VStack(spacing: gap) {
@@ -36,6 +54,8 @@ struct SplitFlapBoard: View {
                     columns: columns,
                     cellSize: cellSize,
                     gap: gap,
+                    seamGap: seamGap,
+                    cascadeDelay: cascadeDelay,
                     rowIndex: rowIndex
                 )
             }
@@ -50,12 +70,24 @@ private struct SplitFlapRow: View {
     let columns: Int
     let cellSize: CGFloat
     let gap: CGFloat
+    let seamGap: CGFloat
+    let cascadeDelay: TimeInterval
     let rowIndex: Int
 
-    init(text: String, columns: Int, cellSize: CGFloat, gap: CGFloat, rowIndex: Int) {
+    init(
+        text: String,
+        columns: Int,
+        cellSize: CGFloat,
+        gap: CGFloat,
+        seamGap: CGFloat,
+        cascadeDelay: TimeInterval,
+        rowIndex: Int
+    ) {
         self.columns = columns
         self.cellSize = cellSize
         self.gap = gap
+        self.seamGap = seamGap
+        self.cascadeDelay = cascadeDelay
         self.rowIndex = rowIndex
 
         let source = Array(text.uppercased())
@@ -69,7 +101,10 @@ private struct SplitFlapRow: View {
                 SplitFlapCell(
                     targetCharacter: item.element,
                     cellSize: cellSize,
-                    cellID: rowIndex * columns + item.offset
+                    cellID: rowIndex * columns + item.offset,
+                    columnIndex: item.offset,
+                    seamGap: seamGap,
+                    cascadeDelay: cascadeDelay
                 )
             }
         }
@@ -80,6 +115,9 @@ struct SplitFlapCell: View {
     let targetCharacter: Character
     let cellSize: CGFloat
     let cellID: Int
+    let columnIndex: Int
+    let seamGap: CGFloat
+    let cascadeDelay: TimeInterval
 
     @State private var currentIndex: Int
     @State private var targetIndex: Int
@@ -89,10 +127,20 @@ struct SplitFlapCell: View {
     @State private var animationTask: Task<Void, Never>?
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
-    init(targetCharacter: Character, cellSize: CGFloat, cellID: Int) {
+    init(
+        targetCharacter: Character,
+        cellSize: CGFloat,
+        cellID: Int,
+        columnIndex: Int,
+        seamGap: CGFloat,
+        cascadeDelay: TimeInterval
+    ) {
         self.targetCharacter = targetCharacter
         self.cellSize = cellSize
         self.cellID = cellID
+        self.columnIndex = columnIndex
+        self.seamGap = seamGap
+        self.cascadeDelay = cascadeDelay
 
         let initialIndex = SplitFlapCharacters.index(of: targetCharacter)
         _currentIndex = State(initialValue: initialIndex)
@@ -121,19 +169,34 @@ struct SplitFlapCell: View {
             if isAnimating {
                 // The incoming top face is behind the current upper flap.
                 positionedHalf(
-                    SplitFlapHalf(character: nextCharacter, section: .upper, size: cellSize),
+                    SplitFlapHalf(
+                        character: nextCharacter,
+                        section: .upper,
+                        size: cellSize,
+                        seamGap: seamGap
+                    ),
                     alignment: .top
                 )
                 .zIndex(0)
 
                 // The current lower face stays visible until the hinge changes.
                 positionedHalf(
-                    SplitFlapHalf(character: currentCharacter, section: .lower, size: cellSize),
+                    SplitFlapHalf(
+                        character: currentCharacter,
+                        section: .lower,
+                        size: cellSize,
+                        seamGap: seamGap
+                    ),
                     alignment: .bottom
                 )
                 .zIndex(1)
 
-                SplitFlapHalf(character: currentCharacter, section: .upper, size: cellSize)
+                SplitFlapHalf(
+                    character: currentCharacter,
+                    section: .upper,
+                    size: cellSize,
+                    seamGap: seamGap
+                )
                     .rotation3DEffect(
                         .degrees(Double(-90 * upperProgress)),
                         axis: (x: 1, y: 0, z: 0),
@@ -143,7 +206,12 @@ struct SplitFlapCell: View {
                     .frame(width: cellSize, height: cellSize, alignment: .top)
                     .zIndex(2)
 
-                SplitFlapHalf(character: nextCharacter, section: .lower, size: cellSize)
+                SplitFlapHalf(
+                    character: nextCharacter,
+                    section: .lower,
+                    size: cellSize,
+                    seamGap: seamGap
+                )
                     .rotation3DEffect(
                         .degrees(Double(90 * (1 - lowerProgress))),
                         axis: (x: 1, y: 0, z: 0),
@@ -154,22 +222,28 @@ struct SplitFlapCell: View {
                     .zIndex(3)
             } else {
                 positionedHalf(
-                    SplitFlapHalf(character: currentCharacter, section: .upper, size: cellSize),
+                    SplitFlapHalf(
+                        character: currentCharacter,
+                        section: .upper,
+                        size: cellSize,
+                        seamGap: seamGap
+                    ),
                     alignment: .top
                 )
                 positionedHalf(
-                    SplitFlapHalf(character: currentCharacter, section: .lower, size: cellSize),
+                    SplitFlapHalf(
+                        character: currentCharacter,
+                        section: .lower,
+                        size: cellSize,
+                        seamGap: seamGap
+                    ),
                     alignment: .bottom
                 )
             }
         }
         .frame(width: cellSize, height: cellSize)
+        .background(Color.black.opacity(0.9))
         .clipShape(RoundedRectangle(cornerRadius: max(3, cellSize * 0.08), style: .continuous))
-        .overlay {
-            Rectangle()
-                .fill(Color.black.opacity(0.38))
-                .frame(height: max(1, cellSize * 0.025))
-        }
         .shadow(color: .black.opacity(0.16), radius: max(1, cellSize * 0.04), y: 1)
         .accessibilityHidden(true)
         .onAppear {
@@ -204,6 +278,19 @@ struct SplitFlapCell: View {
             isAnimating = false
             flapProgress = 1
             animationTask = nil
+        }
+
+        if !reduceMotion {
+            let cascadeNanoseconds = UInt64(max(0, cascadeDelay) * 1_000_000_000)
+            let cellJitter = UInt64((cellID % 3) * 4_000_000)
+            let startDelay = cascadeNanoseconds * UInt64(columnIndex) + cellJitter
+
+            do {
+                try await Task.sleep(nanoseconds: startDelay)
+                try Task.checkCancellation()
+            } catch {
+                return
+            }
         }
 
         while currentIndex != targetIndex {
@@ -252,6 +339,11 @@ private struct SplitFlapHalf: View {
     let character: Character
     let section: SplitFlapSection
     let size: CGFloat
+    let seamGap: CGFloat
+
+    private var faceHeight: CGFloat {
+        max(1, (size - seamGap) / 2)
+    }
 
     var body: some View {
         ZStack {
@@ -265,7 +357,7 @@ private struct SplitFlapHalf: View {
         .frame(width: size, height: size)
         .frame(
             width: size,
-            height: size / 2,
+            height: faceHeight,
             alignment: section == .upper ? .top : .bottom
         )
         .clipped()
