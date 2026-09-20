@@ -27,8 +27,8 @@ struct MacContentView: View {
 
                     FlipOffMacBoard(quote: displayQuote, accentHex: accentHex)
                         .frame(
-                            width: min(max(proxy.size.width - 64, 640), 1_360),
-                            height: min(max(proxy.size.height * 0.62, 340), 540)
+                            width: min(max(proxy.size.width - 40, 640), 1_440),
+                            height: min(max(proxy.size.height * 0.52, 300), 420)
                         )
                         .offset(y: -proxy.size.height * 0.125)
 
@@ -66,12 +66,12 @@ private struct FlipOffMacBoard: View {
 
         GeometryReader { proxy in
             let gap = max(3, min(6, proxy.size.width * 0.004))
-            let horizontalPadding = max(22, min(38, proxy.size.width * 0.026))
-            let verticalPadding: CGFloat = 22
-            let headerHeight: CGFloat = 22
-            let footerHeight: CGFloat = 4
+            let horizontalPadding = max(16, min(28, proxy.size.width * 0.022))
+            let verticalPadding: CGFloat = 14
+            let headerHeight: CGFloat = 18
+            let footerHeight: CGFloat = 3
             let availableTileWidth = (proxy.size.width - (horizontalPadding * 2) - (gap * 21)) / 22
-            let availableTileHeight = (proxy.size.height - (verticalPadding * 2) - headerHeight - footerHeight - 42 - (gap * 4)) / 5
+            let availableTileHeight = (proxy.size.height - (verticalPadding * 2) - headerHeight - footerHeight - 16 - (gap * 4)) / 5
             let tileSize = max(14, min(availableTileWidth, availableTileHeight))
             let gridWidth = (tileSize * 22) + (gap * 21)
             let gridHeight = (tileSize * 5) + (gap * 4)
@@ -97,7 +97,7 @@ private struct FlipOffMacBoard: View {
                 }
                 .frame(height: headerHeight)
 
-                Spacer(minLength: 14)
+                Spacer(minLength: 8)
 
                 VStack(spacing: gap) {
                     ForEach(rows.indices, id: \.self) { rowIndex in
@@ -110,11 +110,11 @@ private struct FlipOffMacBoard: View {
                 }
                 .frame(width: gridWidth, height: gridHeight)
 
-                Spacer(minLength: 14)
+                Spacer(minLength: 8)
 
                 Capsule()
                     .fill(Color.white.opacity(0.2))
-                    .frame(width: 42, height: footerHeight)
+                    .frame(width: 36, height: footerHeight)
             }
             .padding(.horizontal, horizontalPadding)
             .padding(.vertical, verticalPadding)
@@ -131,7 +131,7 @@ private struct MacTile: View {
 
     var body: some View {
         Text(character == " " ? "" : String(character))
-            .font(.system(size: max(11, min(32, size * 0.47)), weight: .bold, design: .monospaced))
+            .font(.system(size: max(12, min(34, size * 0.52)), weight: .bold, design: .monospaced))
             .foregroundStyle(.white)
             .frame(width: size, height: size)
             .background(Color(red: 0.135, green: 0.14, blue: 0.145))
