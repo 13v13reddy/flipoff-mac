@@ -11,11 +11,6 @@ struct MacContentView: View {
         agentState?.overrideQuote ?? quote
     }
 
-    private var accentHex: String {
-        agentState?.accentHex
-            ?? FlipOffQuotes.accentHexValues[quote.id % FlipOffQuotes.accentHexValues.count]
-    }
-
     var body: some View {
         GeometryReader { proxy in
             ZStack {
@@ -25,7 +20,7 @@ struct MacContentView: View {
                 VStack(spacing: 0) {
                     Spacer(minLength: 24)
 
-                    FlipOffMacBoard(quote: displayQuote, accentHex: accentHex)
+                    FlipOffMacBoard(quote: displayQuote)
                         .frame(
                             width: min(max(proxy.size.width - 40, 640), 1_440),
                             height: min(max(proxy.size.height * 0.52, 300), 420)
@@ -57,7 +52,6 @@ struct MacContentView: View {
 
 private struct FlipOffMacBoard: View {
     let quote: FlipOffQuote
-    let accentHex: String
 
     private let columns = 22
 
@@ -75,25 +69,18 @@ private struct FlipOffMacBoard: View {
             let tileSize = max(14, min(availableTileWidth, availableTileHeight))
             let gridWidth = (tileSize * 22) + (gap * 21)
             let gridHeight = (tileSize * 5) + (gap * 4)
-            let accent = Color(flipOffHex: accentHex)
+            let author = quote.author.isEmpty ? "" : String(quote.author.dropFirst())
 
             VStack(spacing: 0) {
                 HStack(alignment: .center) {
-                    HStack(spacing: 4) {
-                        RoundedRectangle(cornerRadius: 2, style: .continuous)
-                            .fill(accent)
-                            .frame(width: 9, height: 6)
-                        RoundedRectangle(cornerRadius: 2, style: .continuous)
-                            .fill(accent.opacity(0.42))
-                            .frame(width: 9, height: 6)
-                    }
-
                     Spacer()
 
-                    Text(quote.author.isEmpty ? "FLIPOFF" : String(quote.author.dropFirst()))
-                        .font(.system(size: 11, weight: .semibold, design: .monospaced))
-                        .tracking(1.1)
-                        .foregroundStyle(.white.opacity(0.42))
+                    if !author.isEmpty {
+                        Text(author)
+                            .font(.system(size: 11, weight: .semibold, design: .monospaced))
+                            .tracking(1.1)
+                            .foregroundStyle(.white.opacity(0.42))
+                    }
                 }
                 .frame(height: headerHeight)
 
@@ -119,21 +106,5 @@ private struct FlipOffMacBoard: View {
             .clipShape(RoundedRectangle(cornerRadius: 18, style: .continuous))
             .shadow(color: .black.opacity(0.28), radius: 14, y: 8)
         }
-    }
-}
-
-private extension Color {
-    init(flipOffHex hex: String) {
-        let cleaned = hex.trimmingCharacters(in: CharacterSet.alphanumerics.inverted)
-        var value: UInt64 = 0
-        Scanner(string: cleaned).scanHexInt64(&value)
-
-        self.init(
-            .sRGB,
-            red: Double((value >> 16) & 0xff) / 255,
-            green: Double((value >> 8) & 0xff) / 255,
-            blue: Double(value & 0xff) / 255,
-            opacity: 1
-        )
     }
 }

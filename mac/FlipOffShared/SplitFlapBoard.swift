@@ -216,23 +216,23 @@ struct SplitFlapCell: View {
                 continue
             }
 
-            let timingVariation = UInt64((cellID % 5) * 4_000_000)
+            let timingVariation = UInt64((cellID % 5) * 3_000_000)
             do {
-                try await Task.sleep(nanoseconds: 8_000_000 + timingVariation)
+                try await Task.sleep(nanoseconds: 6_000_000 + timingVariation)
                 try Task.checkCancellation()
 
-                withAnimation(.easeIn(duration: 0.024)) {
+                withAnimation(.easeIn(duration: 0.022)) {
                     flapProgress = 0.5
                 }
 
-                try await Task.sleep(nanoseconds: 26_000_000)
+                try await Task.sleep(nanoseconds: 24_000_000)
                 try Task.checkCancellation()
 
                 withAnimation(.spring(response: 0.055, dampingFraction: 0.86, blendDuration: 0)) {
                     flapProgress = 1
                 }
 
-                try await Task.sleep(nanoseconds: 54_000_000)
+                try await Task.sleep(nanoseconds: 44_000_000)
                 try Task.checkCancellation()
             } catch {
                 return

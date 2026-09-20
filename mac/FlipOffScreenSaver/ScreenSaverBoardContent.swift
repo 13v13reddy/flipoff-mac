@@ -22,7 +22,7 @@ struct FlipOffScreenSaverContent: View {
             let gridHeight = (tileSize * 5) + (gap * 4)
             let accent = Color(flipOffHex: accentHex)
             let rows = FlipOffQuotes.boardRows(for: quote, columns: columns)
-            let author = quote.author.isEmpty ? "FLIPOFF" : String(quote.author.dropFirst())
+            let author = quote.author.isEmpty ? "" : String(quote.author.dropFirst())
 
             ZStack {
                 Color.black
@@ -35,10 +35,12 @@ struct FlipOffScreenSaverContent: View {
                         HStack {
                             Spacer()
 
-                            Text(author)
-                                .font(.system(size: 11, weight: .semibold, design: .monospaced))
-                                .tracking(1.1)
-                                .foregroundStyle(.white.opacity(0.42))
+                            if !author.isEmpty {
+                                Text(author)
+                                    .font(.system(size: 11, weight: .semibold, design: .monospaced))
+                                    .tracking(1.1)
+                                    .foregroundStyle(.white.opacity(0.42))
+                            }
                         }
                         .frame(height: headerHeight)
 
