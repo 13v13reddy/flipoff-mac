@@ -1,0 +1,63 @@
+name: FlipOffMac
+
+options:
+  bundleIdPrefix: com.flipoff
+  deploymentTarget:
+    macOS: "14.0"
+  createIntermediateGroups: true
+  groupSortPosition: top
+
+settings:
+  base:
+    SWIFT_VERSION: "5.9"
+    MACOSX_DEPLOYMENT_TARGET: "14.0"
+
+targets:
+  FlipOffMac:
+    type: application
+    platform: macOS
+    sources:
+      - path: FlipOffShared
+      - path: FlipOffMac
+    dependencies:
+      - target: FlipOffWidgetExtension
+        embed: true
+    info:
+      path: FlipOffMac/Info.plist
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.flipoff.mac
+        INFOPLIST_KEY_LSApplicationCategoryType: public.app-category.entertainment
+        CODE_SIGN_ENTITLEMENTS: FlipOffMac/FlipOffMac.entitlements
+
+  FlipOffWidgetExtension:
+    type: app-extension
+    platform: macOS
+    sources:
+      - path: FlipOffShared
+      - path: FlipOffWidget
+    info:
+      path: FlipOffWidget/Info.plist
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.flipoff.mac.widget
+        SKIP_INSTALL: YES
+        CODE_SIGN_ENTITLEMENTS: FlipOffWidget/FlipOffWidget.entitlements
+
+  FlipOffScreenSaver:
+    type: bundle
+    platform: macOS
+    sources:
+      - path: FlipOffShared
+      - path: FlipOffScreenSaver
+    info:
+      path: FlipOffScreenSaver/Info.plist
+    frameworks:
+      - ScreenSaver.framework
+      - AppKit.framework
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.flipoff.mac.screensaver
+        PRODUCT_NAME: FlipOff
+        WRAPPER_EXTENSION: saver
+        SKIP_INSTALL: YES
