@@ -1,0 +1,527 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		22109BFBB7F5DAE57AF30E4C /* FlipOffQuote.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2C6935D136130E757A0EF6 /* FlipOffQuote.swift */; };
+		3799F5AF085C3CB330EC9481 /* FlipOffWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1A8155929E37B088553AD8 /* FlipOffWidget.swift */; };
+		49B02440586EB7F8544EEDA5 /* SplitFlapBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAB79CC3E6B99D4C5F3FD3F /* SplitFlapBoard.swift */; };
+		5901A2973AEB0759E4CB7FE6 /* FlipOffScreenSaverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C30C5E97F39C761A19CE9E8 /* FlipOffScreenSaverView.swift */; };
+		698475065B4C64AA3C0F80F0 /* FlipOffAgentState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D5A9034B00FD47C21A90EC1 /* FlipOffAgentState.swift */; };
+		8E82E0BB86BF75E2B73C0459 /* FlipOffQuote.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2C6935D136130E757A0EF6 /* FlipOffQuote.swift */; };
+		9424C6575607147D815B3286 /* SplitFlapBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAB79CC3E6B99D4C5F3FD3F /* SplitFlapBoard.swift */; };
+		A23ECC277DF398DEB1A02163 /* FlipOffWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = CA48B0B606254DC742A8634C /* FlipOffWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		AEB6FA7E114F065D7A7245E2 /* FlipOffMacApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4455201862771A6BD721E3A8 /* FlipOffMacApp.swift */; };
+		B14AF4C208989269F658378A /* MacContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3032A23D1194D8E6FBC8962B /* MacContentView.swift */; };
+		C1BEA42776C88869A3F38CF5 /* SplitFlapBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAB79CC3E6B99D4C5F3FD3F /* SplitFlapBoard.swift */; };
+		C587B68AB06FB0D50BF78504 /* ScreenSaverBoardContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C161072D04B6A7C19FBCF3 /* ScreenSaverBoardContent.swift */; };
+		DA7CE47F3C8C75FE996B0C8F /* FlipOffAgentState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D5A9034B00FD47C21A90EC1 /* FlipOffAgentState.swift */; };
+		EFAC0C8136762F7F8F45CA0A /* FlipOffAgentState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D5A9034B00FD47C21A90EC1 /* FlipOffAgentState.swift */; };
+		FACB31C31D445C46F345B101 /* FlipOffQuote.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2C6935D136130E757A0EF6 /* FlipOffQuote.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B6D6CBEB46B97646D01A9BE8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 458FFA1C4071458AA4F381BF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FE67BFDC1AC5DFE62A90C785;
+			remoteInfo = FlipOffWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A8264D1D223687E4A1775156 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				A23ECC277DF398DEB1A02163 /* FlipOffWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		2D1A8155929E37B088553AD8 /* FlipOffWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlipOffWidget.swift; sourceTree = "<group>"; };
+		3032A23D1194D8E6FBC8962B /* MacContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacContentView.swift; sourceTree = "<group>"; };
+		3ED0230B0BA56E745BBE7068 /* FlipOffMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlipOffMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4455201862771A6BD721E3A8 /* FlipOffMacApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlipOffMacApp.swift; sourceTree = "<group>"; };
+		4C30C5E97F39C761A19CE9E8 /* FlipOffScreenSaverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlipOffScreenSaverView.swift; sourceTree = "<group>"; };
+		6D5A9034B00FD47C21A90EC1 /* FlipOffAgentState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlipOffAgentState.swift; sourceTree = "<group>"; };
+		84C161072D04B6A7C19FBCF3 /* ScreenSaverBoardContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenSaverBoardContent.swift; sourceTree = "<group>"; };
+		A93BAF5F0CD6D5D23CDA700A /* FlipOffScreenSaver.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlipOffScreenSaver.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		B105F645924107ED94330CAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		CA48B0B606254DC742A8634C /* FlipOffWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = FlipOffWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		CAAB79CC3E6B99D4C5F3FD3F /* SplitFlapBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitFlapBoard.swift; sourceTree = "<group>"; };
+		CC2C6935D136130E757A0EF6 /* FlipOffQuote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlipOffQuote.swift; sourceTree = "<group>"; };
+		CE43AAB12E314BFE77FDCBD0 /* FlipOffWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FlipOffWidget.entitlements; sourceTree = "<group>"; };
+		F9857E569BFD56C50EBBDF38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		2BA66CFD0CF938C47A7B3A75 /* FlipOffScreenSaver */ = {
+			isa = PBXGroup;
+			children = (
+				4C30C5E97F39C761A19CE9E8 /* FlipOffScreenSaverView.swift */,
+				F9857E569BFD56C50EBBDF38 /* Info.plist */,
+				84C161072D04B6A7C19FBCF3 /* ScreenSaverBoardContent.swift */,
+			);
+			path = FlipOffScreenSaver;
+			sourceTree = "<group>";
+		};
+		A373E63A943C059AA9CBB089 = {
+			isa = PBXGroup;
+			children = (
+				D5C6184D9A1DF48536168359 /* FlipOffMac */,
+				2BA66CFD0CF938C47A7B3A75 /* FlipOffScreenSaver */,
+				F33791AD82C35A6D7C3541D0 /* FlipOffShared */,
+				E20EFD614A466862E1D18A29 /* FlipOffWidget */,
+				D2A335C65DBE0F14601EBA9E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D2A335C65DBE0F14601EBA9E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3ED0230B0BA56E745BBE7068 /* FlipOffMac.app */,
+				A93BAF5F0CD6D5D23CDA700A /* FlipOffScreenSaver.bundle */,
+				CA48B0B606254DC742A8634C /* FlipOffWidgetExtension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D5C6184D9A1DF48536168359 /* FlipOffMac */ = {
+			isa = PBXGroup;
+			children = (
+				4455201862771A6BD721E3A8 /* FlipOffMacApp.swift */,
+				3032A23D1194D8E6FBC8962B /* MacContentView.swift */,
+			);
+			path = FlipOffMac;
+			sourceTree = "<group>";
+		};
+		E20EFD614A466862E1D18A29 /* FlipOffWidget */ = {
+			isa = PBXGroup;
+			children = (
+				CE43AAB12E314BFE77FDCBD0 /* FlipOffWidget.entitlements */,
+				2D1A8155929E37B088553AD8 /* FlipOffWidget.swift */,
+				B105F645924107ED94330CAA /* Info.plist */,
+			);
+			path = FlipOffWidget;
+			sourceTree = "<group>";
+		};
+		F33791AD82C35A6D7C3541D0 /* FlipOffShared */ = {
+			isa = PBXGroup;
+			children = (
+				6D5A9034B00FD47C21A90EC1 /* FlipOffAgentState.swift */,
+				CC2C6935D136130E757A0EF6 /* FlipOffQuote.swift */,
+				CAAB79CC3E6B99D4C5F3FD3F /* SplitFlapBoard.swift */,
+			);
+			path = FlipOffShared;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8F50788D11912DD6CEDD8CC0 /* FlipOffMac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1CAB7A4D11A077A629D9054D /* Build configuration list for PBXNativeTarget "FlipOffMac" */;
+			buildPhases = (
+				8DE074B8E991BB2E33EDA2C3 /* Sources */,
+				A8264D1D223687E4A1775156 /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EF616484A9573FC63D885935 /* PBXTargetDependency */,
+			);
+			name = FlipOffMac;
+			packageProductDependencies = (
+			);
+			productName = FlipOffMac;
+			productReference = 3ED0230B0BA56E745BBE7068 /* FlipOffMac.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AAA3DCCE85E419AE527F8D8C /* FlipOffScreenSaver */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F4A9BE214FD70FD3438400D5 /* Build configuration list for PBXNativeTarget "FlipOffScreenSaver" */;
+			buildPhases = (
+				2E56D9E624BB59548B0F5718 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FlipOffScreenSaver;
+			packageProductDependencies = (
+			);
+			productName = FlipOffScreenSaver;
+			productReference = A93BAF5F0CD6D5D23CDA700A /* FlipOffScreenSaver.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+		FE67BFDC1AC5DFE62A90C785 /* FlipOffWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AC60CF24B15B2D5E3C80E397 /* Build configuration list for PBXNativeTarget "FlipOffWidgetExtension" */;
+			buildPhases = (
+				D25C154B171DE5648125DFAB /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FlipOffWidgetExtension;
+			packageProductDependencies = (
+			);
+			productName = FlipOffWidgetExtension;
+			productReference = CA48B0B606254DC742A8634C /* FlipOffWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		458FFA1C4071458AA4F381BF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+				};
+			};
+			buildConfigurationList = 9E9925931C718FEC6F40056F /* Build configuration list for PBXProject "FlipOffMac" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = A373E63A943C059AA9CBB089;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = D2A335C65DBE0F14601EBA9E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8F50788D11912DD6CEDD8CC0 /* FlipOffMac */,
+				AAA3DCCE85E419AE527F8D8C /* FlipOffScreenSaver */,
+				FE67BFDC1AC5DFE62A90C785 /* FlipOffWidgetExtension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2E56D9E624BB59548B0F5718 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EFAC0C8136762F7F8F45CA0A /* FlipOffAgentState.swift in Sources */,
+				8E82E0BB86BF75E2B73C0459 /* FlipOffQuote.swift in Sources */,
+				5901A2973AEB0759E4CB7FE6 /* FlipOffScreenSaverView.swift in Sources */,
+				C587B68AB06FB0D50BF78504 /* ScreenSaverBoardContent.swift in Sources */,
+				49B02440586EB7F8544EEDA5 /* SplitFlapBoard.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8DE074B8E991BB2E33EDA2C3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA7CE47F3C8C75FE996B0C8F /* FlipOffAgentState.swift in Sources */,
+				AEB6FA7E114F065D7A7245E2 /* FlipOffMacApp.swift in Sources */,
+				FACB31C31D445C46F345B101 /* FlipOffQuote.swift in Sources */,
+				B14AF4C208989269F658378A /* MacContentView.swift in Sources */,
+				C1BEA42776C88869A3F38CF5 /* SplitFlapBoard.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D25C154B171DE5648125DFAB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				698475065B4C64AA3C0F80F0 /* FlipOffAgentState.swift in Sources */,
+				22109BFBB7F5DAE57AF30E4C /* FlipOffQuote.swift in Sources */,
+				3799F5AF085C3CB330EC9481 /* FlipOffWidget.swift in Sources */,
+				9424C6575607147D815B3286 /* SplitFlapBoard.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EF616484A9573FC63D885935 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FE67BFDC1AC5DFE62A90C785 /* FlipOffWidgetExtension */;
+			targetProxy = B6D6CBEB46B97646D01A9BE8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1E2D855C446F50BFB41E26D5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = FlipOffWidget/FlipOffWidget.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = FlipOffWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.flipoff.mac.widget;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		37400D3B7C6846CDB1BB94F2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = FlipOffScreenSaver/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.flipoff.mac.screensaver;
+				PRODUCT_NAME = FlipOff;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = saver;
+			};
+			name = Release;
+		};
+		4D88EC0B278DF436932EBD7B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = FlipOffWidget/FlipOffWidget.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = FlipOffWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.flipoff.mac.widget;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		6BBBA4C2FA6433493415C864 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = FlipOffMac/FlipOffMac.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = FlipOffMac/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.flipoff.mac;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		7666F6C8F997837F6976A8D8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = FlipOffScreenSaver/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.flipoff.mac.screensaver;
+				PRODUCT_NAME = FlipOff;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = saver;
+			};
+			name = Debug;
+		};
+		AE657A276D2F0763FCE3F513 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.9;
+			};
+			name = Debug;
+		};
+		EDBB184F5683C184CAC8B457 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = FlipOffMac/FlipOffMac.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = FlipOffMac/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.flipoff.mac;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		FFD1AA4B930E72975CD41B14 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.9;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1CAB7A4D11A077A629D9054D /* Build configuration list for PBXNativeTarget "FlipOffMac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6BBBA4C2FA6433493415C864 /* Debug */,
+				EDBB184F5683C184CAC8B457 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		9E9925931C718FEC6F40056F /* Build configuration list for PBXProject "FlipOffMac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AE657A276D2F0763FCE3F513 /* Debug */,
+				FFD1AA4B930E72975CD41B14 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		AC60CF24B15B2D5E3C80E397 /* Build configuration list for PBXNativeTarget "FlipOffWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1E2D855C446F50BFB41E26D5 /* Debug */,
+				4D88EC0B278DF436932EBD7B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		F4A9BE214FD70FD3438400D5 /* Build configuration list for PBXNativeTarget "FlipOffScreenSaver" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7666F6C8F997837F6976A8D8 /* Debug */,
+				37400D3B7C6846CDB1BB94F2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 458FFA1C4071458AA4F381BF /* Project object */;
+}

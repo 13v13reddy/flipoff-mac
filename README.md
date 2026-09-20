@@ -81,6 +81,33 @@ Edit `js/constants.js` to change:
 - **Timing**: Tweak `SCRAMBLE_DURATION`, `STAGGER_DELAY`, etc.
 - **Colors**: Modify `SCRAMBLE_COLORS` and `ACCENT_COLORS`
 
+## Mac widget and screen saver
+
+The repository also includes a native macOS companion in `mac/`:
+
+- A WidgetKit desktop widget in small, medium, and large sizes
+- A `.saver` screen saver with continuously animated split-flap transitions
+- Shared offline quote data, so neither surface needs a server or login
+- A loopback JSON API and dependency-free MCP server in `agent/`, so AI agents can read and control the display
+
+Install the XcodeGen project and build the native targets:
+
+```bash
+./build.sh
+```
+
+The script regenerates `mac/FlipOffMac.xcodeproj`, builds both native targets sequentially, and writes ignored artifacts under `build/`. Set `CONFIGURATION=Release`, `CODE_SIGNING_ALLOWED=YES`, or `BUILD_ROOT=/path/to/output` to override the defaults.
+
+To open the generated project directly:
+
+```bash
+open mac/FlipOffMac.xcodeproj
+```
+
+Build `FlipOffMac` to preview the widget, then build `FlipOffScreenSaver` and double-click the generated `FlipOff.saver` to install it in macOS Screen Saver settings.
+
+See [`agent/README.md`](agent/README.md) for the API routes and MCP registration snippet.
+
 ## License
 
 MIT — do whatever you want with it.
