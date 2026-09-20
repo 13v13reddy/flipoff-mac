@@ -19,24 +19,10 @@ struct MacContentView: View {
     var body: some View {
         GeometryReader { proxy in
             ZStack {
-                Color(red: 0.035, green: 0.04, blue: 0.045)
+                Color.black
                     .ignoresSafeArea()
 
                 VStack(spacing: 0) {
-                    HStack(alignment: .center) {
-                        Text("FlipOff.")
-                            .font(.system(size: 24, weight: .bold, design: .rounded))
-                            .foregroundStyle(.white)
-
-                        Spacer()
-
-                        Circle()
-                            .fill(Color(flipOffHex: accentHex))
-                            .frame(width: 8, height: 8)
-                            .shadow(color: Color(flipOffHex: accentHex).opacity(0.55), radius: 8)
-                    }
-                    .frame(height: 28)
-
                     Spacer(minLength: 24)
 
                     FlipOffMacBoard(quote: displayQuote, accentHex: accentHex)
